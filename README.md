@@ -2,7 +2,7 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.4.
 
-Weather App is a weather forecast application developed using Angular. It allows users to retrieve accurate weather information for a specific location using the RapidAPI weather API.
+Weather App is a weather forecast application developed using Angular. It allows users to retrieve accurate weather information for a specific location using the RapidAPI weather API By  Jamiatul Hamidah.
 
 ## Installation
 
