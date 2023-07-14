@@ -1,4 +1,74 @@
-<body>
+  <div class="search">
+    <form #form="ngForm" (submit)="onSubmit()">
+      <input type="text" placeholder="Search City" name="city" [(ngModel)]="cityName">
+    </form>
+  </div>
+
+  <div class="container" *ngIf="weather">
+    <div class="up-data">
+      <img src="../assets/hot.jpeg" *ngIf="(weather.main.temp - 273.15) > 15">
+      <img src="../assets/cold.jpg" *ngIf="(weather.main.temp - 273.15) <= 15">
+
+      <div class="weather-data">
+        <div class="location">
+          {{weather.name}}
+        </div>
+        <div class="temperature">
+          {{weather.main.temp - 273.15| number: '1.0-0'}} °C
+        </div>
+      </div>
+
+    </div>
+    <div class="down-data">
+      <div class="info-label">
+        More Information
+      </div>
+      <div class="info-container">
+        <!-- min temperature info -->
+        <div class="info-box">
+          <div class="info-box-label">
+            <img src="../assets/min.png">
+            <span>min</span>
+          </div>
+          <div class="info-box-value">
+            {{weather.main.temp_min - 273.15 | number: '1.0-0'}} °C
+          </div>
+        </div>
+        <!-- max temperature info -->
+        <div class="info-box">
+          <div class="info-box-label">
+            <img src="../assets/max.png">
+            <span>max</span>
+          </div>
+          <div class="info-box-value">
+            {{weather.main.temp_max - 273.15 | number: '1.0-0'}} °C
+          </div>
+        </div>
+        <!-- humidty info -->
+        <div class="info-box">
+          <div class="info-box-label">
+            <img src="../assets/humidity.png">
+            <span>humidity</span>
+          </div>
+          <div class="info-box-value">
+            {{weather.main.humidity}}%
+          </div>
+        </div>
+        <!-- wind speed info -->
+        <div class="info-box">
+          <div class="info-box-label">
+            <img src="../assets/wind.png">
+            <span>wind</span>
+          </div>
+          <div class="info-box-value">
+            {{weather.wind.speed}} km/h
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- <body>
     <div class="container">
       <div class="up-data">
         <img src="../assets/hot.jpeg" *ngIf="14 > 15">
@@ -19,7 +89,7 @@
           More Information
         </div>
         <div class="info-container">
-          <!-- min temperature info -->
+          <!- min temperature info --
           <div class="info-box">
             <div class="info-box-label">
               <img src="../assets/min.png">
@@ -29,7 +99,7 @@
               12 °C
             </div>
           </div>
-          <!-- max temperature info -->
+          <!- max temperature info --
           <div class="info-box">
             <div class="info-box-label">
               <img src="../assets/max.png">
@@ -39,7 +109,7 @@
               18 °C
             </div>
           </div>
-          <!-- humidty info -->
+          <-- humidty info --
           <div class="info-box">
             <div class="info-box-label">
               <img src="../assets/humidity.png">
@@ -49,7 +119,7 @@
               66%
             </div>
           </div>
-          <!-- wind speed info -->
+          <-- wind speed info --
           <div class="info-box">
             <div class="info-box-label">
               <img src="../assets/wind.png">
@@ -62,5 +132,5 @@
         </div>
       </div>
     </div>
-</body>
+</body> -->
 <router-outlet></router-outlet>
